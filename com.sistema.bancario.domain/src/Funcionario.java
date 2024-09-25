@@ -10,4 +10,6 @@ public class Funcionario extends Entidade{
         return salario;
     }
 
+
+
 }
