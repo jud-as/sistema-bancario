@@ -1,17 +1,22 @@
 public class Conta {
 
     private static int contadorDeContas = 1;
+
     private int numeroConta;
     private double saldo = 0;
-    private Cliente cliente;
+    private Entidade entidade;
+    private String tipoConta = "";
 
-    public Conta(Cliente cliente) {
+    public Conta(Entidade entidade) {
         this.numeroConta = contadorDeContas;
-        this.cliente = cliente;
+        this.entidade = entidade;
+        this.tipoConta = tipoConta;
         contadorDeContas++;
     }
 
-
+    public static int getContadorDeContas() {
+        return contadorDeContas;
+    }
 
     public int getNumeroConta() {
         return numeroConta;
@@ -29,16 +34,24 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Entidade getEntidade() {
+        return entidade;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setEntidade(Entidade entidade) {
+        this.entidade = entidade;
+    }
+
+    public String getTipoConta() {
+        return tipoConta;
+    }
+
+    public void setTipoConta(String tipoConta) {
+        this.tipoConta = tipoConta;
     }
 
     @Override
     public String toString() {
-        return "\nConta: " + numeroConta + "\nSaldo: " + saldo + "\nCliente: " + this.cliente.getNome();
+        return "\nConta: " + numeroConta + "\nSaldo: " + saldo + "\nNome: " + this.entidade.getNome();
     }
 }

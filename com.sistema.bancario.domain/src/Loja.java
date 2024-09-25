@@ -1,37 +1,34 @@
 import java.util.ArrayList;
 
-public class Loja {
-    int cnpj;
-    Conta contaLoja;
-    ArrayList<Funcionario> listaFuncionarios = new ArrayList<>();
+public class Loja extends Entidade {
 
-    public Loja(ArrayList<Funcionario> listaFuncionarios, Conta contaLoja, int cnpj) {
-        this.listaFuncionarios = listaFuncionarios;
-        this.contaLoja = contaLoja;
+    private static final String cpf = "N/A";
+
+    public Loja(String nome, String email, String cnpj) {
+        super(nome, email, cpf);
         this.cnpj = cnpj;
     }
+    private ArrayList<Funcionario> funcionarios = new ArrayList<>();
+    private String cnpj;
 
-    public int getCnpj() {
+    public ArrayList<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(ArrayList<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
+
+    public String getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(int cnpj) {
+    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
 
-    public Conta getContaLoja() {
-        return contaLoja;
-    }
-
-    public void setContaLoja(Conta contaLoja) {
-        this.contaLoja = contaLoja;
-    }
-
-    public ArrayList<Funcionario> getListaFuncionarios() {
-        return listaFuncionarios;
-    }
-
-    public void setListaFuncionarios(ArrayList<Funcionario> listaFuncionarios) {
-        this.listaFuncionarios = listaFuncionarios;
+    @Override
+    public String toString() {
+        return super.toString() + "\ncnpj: " + cnpj + "\nFuncionarios: " + funcionarios;
     }
 }
