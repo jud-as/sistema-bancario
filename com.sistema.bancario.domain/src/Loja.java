@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Loja extends Entidade {
 
@@ -8,14 +9,14 @@ public class Loja extends Entidade {
         super(nome, email, cpf);
         this.cnpj = cnpj;
     }
-    private ArrayList<Funcionario> funcionarios = new ArrayList<>();
+    private List<Funcionario> funcionarios;
     private String cnpj;
 
-    public ArrayList<Funcionario> getFuncionarios() {
+    public List<Funcionario> getFuncionarios() {
         return funcionarios;
     }
 
-    public void setFuncionarios(ArrayList<Funcionario> funcionarios) {
+    public void setFuncionarios(List<Funcionario> funcionarios) {
         this.funcionarios = funcionarios;
     }
 

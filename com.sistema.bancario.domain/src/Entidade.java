@@ -3,6 +3,8 @@ public class Entidade {
     private String nome;
     private String email;
     private String cpf;
+    private int[] numeroConta = new int[3]; //  Todas as entidades possuem 3 contas:
+    //"Conta-Corrente", "Conta-Investimentos" e "Conta-Comercial", respectivamente.
 
     public Entidade(String nome, String email, String cpf) {
         this.nome = nome;
@@ -32,6 +34,14 @@ public class Entidade {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public int[] getNumeroConta() {
+        return numeroConta;
+    }
+
+    public void setNumeroConta(int[] numeroConta) {
+        this.numeroConta = numeroConta;
     }
 
     @Override

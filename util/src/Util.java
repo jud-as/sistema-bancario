@@ -9,4 +9,8 @@ public class Util {
         return formatarValores.format(valor);
     }
 
+    public static double gerarValorAleatorio(float min, float max){
+        return (double) (Math.random() * (max - min) + min);
+    }
+
 }
