@@ -34,4 +34,10 @@ public class ServiceConta {
         }
         return null;
     }
+
+    public static boolean isClienteConta(Conta conta) {
+        return conta.getEntidade() instanceof Cliente;
+    }
+
+
 }

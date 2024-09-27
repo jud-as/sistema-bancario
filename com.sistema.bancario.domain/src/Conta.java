@@ -52,6 +52,6 @@ public class Conta {
 
     @Override
     public String toString() {
-        return "\nConta: " + numeroConta + "\nSaldo: " + saldo + "\nNome: " + this.entidade.getNome() + "\nTipo de Conta: " + tipoConta;
+        return "\nConta: " + numeroConta + "\nSaldo: " + Util.doubleToString(saldo) + "\nNome: " + this.entidade.getNome() + "\nTipo de Conta: " + tipoConta;
     }
 }
