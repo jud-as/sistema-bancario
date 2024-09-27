@@ -10,5 +10,6 @@
     <orderEntry type="module" module-name="com.sistema.bancario.domain" />
     <orderEntry type="module" module-name="com.sistema.bancario.data" />
     <orderEntry type="module" module-name="application" />
+    <orderEntry type="module" module-name="util" />
   </component>
 </module>

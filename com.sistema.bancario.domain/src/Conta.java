@@ -10,20 +10,11 @@ public class Conta {
     public Conta(Entidade entidade) {
         this.numeroConta = contadorDeContas;
         this.entidade = entidade;
-        this.tipoConta = tipoConta;
         contadorDeContas++;
-    }
-
-    public static int getContadorDeContas() {
-        return contadorDeContas;
     }
 
     public int getNumeroConta() {
         return numeroConta;
-    }
-
-    public void setNumeroConta(int numeroConta) {
-        this.numeroConta = numeroConta;
     }
 
     public double getSaldo() {

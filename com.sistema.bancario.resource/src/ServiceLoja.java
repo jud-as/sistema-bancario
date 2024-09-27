@@ -1,32 +1,32 @@
-import java.util.PriorityQueue;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class ServiceLoja {
 
-    public static void pagarFuncionarios(Loja loja) {
+    public static void pagarFuncionarios(Conta contaComercial, List<Funcionario> funcionarios) {
 
-        Queue<Funcionario> funcionarios = new PriorityQueue<>(); // Cria estutura de fila
-        funcionarios.addAll(loja.getFuncionarios()); // Adiciona funcionários a fila
-        Conta contaComercial = ServiceConta.buscarConta(Main.listaContas, loja.getNumeroConta()[2]);
+        for (Funcionario funcionario : funcionarios) {
 
-        while (contaComercial.getSaldo() >= 1400 && !funcionarios.isEmpty()) {
-            Funcionario funcionarioAuxiliar = funcionarios.poll();
-            if (funcionarioAuxiliar != null) {
-                // Busca das contas da loja e funcionários associados
-                Conta contaCorrenteFuncionario = ServiceConta.buscarConta(Main.listaContas, funcionarioAuxiliar.getNumeroConta()[0]);
-                Conta contaInvestimentosFuncionario = ServiceConta.buscarConta(Main.listaContas, funcionarioAuxiliar.getNumeroConta()[1]);
+            if (funcionario != null) {
 
-                // Pagamento de funcionários
-                contaCorrenteFuncionario.setSaldo(contaCorrenteFuncionario.getSaldo() + 1400);
-                contaComercial.setSaldo(contaComercial.getSaldo() - 1400);
+                if(contaComercial.getSaldo() >= 1400) {
+                    Conta contaCorrenteFuncionario = ServiceConta.buscarConta(Main.listaContas, funcionario.getNumeroConta()[0]);
+                    Conta contaInvestimentosFuncionario = ServiceConta.buscarConta(Main.listaContas, funcionario.getNumeroConta()[1]);
 
-                // Transferência de 20% do salário para conta de investimentos
-                double valorInvestimento = 1400 * 0.2;
-                contaInvestimentosFuncionario.setSaldo(contaInvestimentosFuncionario.getSaldo() + valorInvestimento);
-                contaCorrenteFuncionario.setSaldo(contaCorrenteFuncionario.getSaldo() - valorInvestimento);
+                    contaCorrenteFuncionario.setSaldo(contaCorrenteFuncionario.getSaldo() + 1400);
+                    contaComercial.setSaldo(contaComercial.getSaldo() - 1400);
+                    System.out.println("Pagamento de R$1400,00 realizado para o funcionário " + funcionario.getNome());
 
-                // Recoloca o funcionário ao final da fila
-                funcionarios.add(funcionarioAuxiliar);
+                    double valorInvestimento = 1400 * 0.2;
+                    contaInvestimentosFuncionario.setSaldo(contaInvestimentosFuncionario.getSaldo() + valorInvestimento);
+                    contaCorrenteFuncionario.setSaldo(contaCorrenteFuncionario.getSaldo() - valorInvestimento);
+                    System.out.println("Transferência de R$" + valorInvestimento + " para a conta de investimentos do funcionário " + funcionario.getNome());
+                }
+                else{
+                    break;
+                }
+
             }
         }
     }
