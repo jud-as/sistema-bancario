@@ -4,7 +4,7 @@ public class ServiceConta {
 
     public static Conta criarContaCliente(Cliente cliente) {
         Conta conta = new Conta(cliente);
-        conta.setSaldo(2000);
+        conta.setSaldo(2000); // Saldo inicial de 2000 reais.
         conta.setTipoConta("Conta-Corrente.");
         return conta;
     }
@@ -14,7 +14,7 @@ public class ServiceConta {
         Conta contaInvestimentos = new Conta(funcionario);
         contaCorrente.setTipoConta("Conta-Corrente");
         contaInvestimentos.setTipoConta("Conta-Investimentos");
-        return new ArrayList<>() {{
+        return new ArrayList<>() {{ //  Retorna as contas criadas em uma lista.
             add(contaCorrente);
             add(contaInvestimentos);
         }};
@@ -34,10 +34,5 @@ public class ServiceConta {
         }
         return null;
     }
-
-    public static boolean isClienteConta(Conta conta) {
-        return conta.getEntidade() instanceof Cliente;
-    }
-
 
 }
