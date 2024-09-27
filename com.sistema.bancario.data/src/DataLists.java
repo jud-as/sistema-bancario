@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class DataLists {
+public class DataLists { // Classe que contém ArrayLists de objetos Cliente, Funcionario e Loja.
 
     private static ArrayList<Cliente> listaClientes = new ArrayList<>(){{
         add(new Cliente("Gabriel", "gabriel2004@gmail.com", "49279173912"));
@@ -17,10 +17,10 @@ public class DataLists {
     }};
 
     private static ArrayList<Funcionario> listaFuncionarios = new ArrayList<>(){{
-        add(new Funcionario("Joao", "joao.sampaio.f@banco.com.br", "79150991475"));
-        add(new Funcionario("Maria", "maria.fonseca.f@banco.com.br", "07252413115"));
-        add(new Funcionario("Juliana", "juliana.correia.f@banco.com.br", "76152912150"));
-        add(new Funcionario("Henrique", "henrique.vidal.f@banco.com.br", "99112947170"));
+        add(new Funcionario("Joao", "joao.sampaio.f@heylisten.com.br", "79150991475"));
+        add(new Funcionario("Maria", "maria.fonseca.f@heylisten.com.br", "07252413115"));
+        add(new Funcionario("Juliana", "juliana.correia.f@cultura.com.br", "76152912150"));
+        add(new Funcionario("Henrique", "henrique.vidal.f@cultura.com.br", "99112947170"));
     }};
 
     private static ArrayList<Loja> listaLojas = new ArrayList<>(){{
